@@ -1,0 +1,114 @@
+
+    
+    [{
+    "id": 1,
+    "nombre": "Pepito",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Mediano",
+    "nombreRefugio" : "Los Zaguates",
+    "foto": "images/dog1.jpg"
+
+
+},
+{
+    "id": 2,
+    "nombre": "Mimi",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Mascotas en Adopcion",
+    "foto": "images/gato (1).jpg"
+
+
+},
+{
+    "id": 3,
+    "nombre": "Benji",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Los Zaguates",
+    "foto": "images/dog2.jpg"
+
+
+},
+{
+    "id": 4,
+    "nombre": "Benito",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Grande",
+    "nombreRefugio" : "Mascotas en Adopcion",
+    "foto": "images/dog3.jpg"
+
+
+},
+{
+    "id": 5,
+    "nombre": "Silvy",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Mediano",
+    "nombreRefugio" : "Gatitos en Adopcion",
+    "foto": "images/gato (2).jpg"
+
+
+},
+{
+    "id": 6,
+    "nombre": "Starlord",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Grande",
+    "nombreRefugio" : "Los Zaguates",
+    "foto": "images/dog4.jpg"
+
+
+},
+{
+    "id": 7,
+    "nombre": "Blue",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Gatitos en Adopcion",
+    "foto": "images/gato (3).jpg"
+
+
+},
+{
+    "id": 8,
+    "nombre": "Tomy",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Mascotas en Adopcion",
+    "foto": "images/dog5.jpg"
+
+
+},
+{
+    "id": 9,
+    "nombre": "Santi",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Grande",
+    "nombreRefugio" : "Mascotas en Adopcion",
+    "foto": "images/dog6.jpg"
+
+
+},
+{
+    "id": 10,
+    "nombre": "Rocky",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Los Zaguates",
+    "foto": "images/gato (4).jpg"
+
+
+}
+
+]
