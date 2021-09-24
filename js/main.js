@@ -39,12 +39,14 @@ function consultarJson(){
 }
 
 function mostrarCard(datos){
-    datos.forEach(dato =>{
+    
+    datos.forEach((dato, r) =>{
+       
+        if (r < 3){
         $('#prueba').append(`
         
         <div id="prueba">
                     <div class="card h-100 text-center border-success mb-3" style="width:18rem;" >
-
                         <img src="${dato.foto}" class="card-img-top" alt="...">
                           
                         <div class="card-body">
@@ -55,9 +57,15 @@ function mostrarCard(datos){
                     </div>  
                     </div>
                     
-                     `)} 
+                     `)}
+                     console.log(r)
+                      
+                    } 
+                    
 
     )};
+
+
 
 
 /****Busqueda de coincidencias********* */
@@ -109,3 +117,4 @@ function filtrarDatos(adoptables){
 };
 
 /*------------------------------------*/
+
