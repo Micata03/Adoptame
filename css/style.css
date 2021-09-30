@@ -122,15 +122,93 @@ p{
 }
 
 
-/*--------Formulario----*/
-.formulario{
-    display: grid;
-   place-items: center;
-   height: 50vh;
-   border: 2px solid #6a9254;
-   margin: 10% auto;
+/*---CONTACT-FORM---*/
+.contact-form {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+  }
+  
+  .contact-form > * {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+    font-family: var(--font);
+  }
+  
+  .contact-form input {
+    border: 0;
+    padding-left: 0;
+    border-bottom: thin solid var(--gray-dark-color);
+  }
+  
+  .contact-form textarea {
+    border: thin solid var(--gray-dark-color);
+    resize: none;
+  }
+  
+  .contact-form input[type="submit"] {
+    margin-top: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+  }
+  
+  .contact-form input[type="submit"]:hover {
+    opacity: 0.75;
+  }
+  
+  .contact-form *::placeholder {
+    color: var(--gray-dark-color);
+  }
+  
+  .contact-form-response {
+    padding: 1rem;
+    width: 400px;
+    text-align: center;
+    background-color: var(--white-color);
+  }
+  .contact-form-response svg {
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    fill: var(--first-color);
+  }
+  
+  .modal#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .contact-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1rem;
+    }
+  
+    .contact-form textarea,
+    .contact-form-loader {
+      grid-column: span 2;
+    }
+  
+    .contact-form input[type="submit"] {
+      margin-left: 0;
+    }
+  }
 
-}
+
+  
 
 /*-----Menu----*/
 
@@ -215,6 +293,7 @@ p{
      top: -1px;
      position: relative;
      box-shadow: 0px 0px 8px 0px;
+     margin-bottom: 5%;
 }
 /*-------------Tarjetas---------------*/
 
@@ -250,11 +329,11 @@ p{
 }
 
 
-/*.container{
+.container{
     margin-left: auto;
     margin-right: auto;
     max-width: var(--max-width)
-}*/
+}
 
 .gray-scale{
     filter: grayscale(1);
@@ -323,7 +402,71 @@ p{
 
 }
 @media screen and (min-width: 768px){
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
 
+        }
+      
+}
+
+
+
+
+#resultado{
+    margin-top: 1rem;
+}
+
+.contact-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+.contact-card > svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--first-color);
+}
+
+.contact-card > small {
+    margin-top: -1rem;
+}
+  
+.footer {
+    margin-bottom: var(--header-height);
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--third-color);
+}
+.social-media a {
+    padding: 0 0.4rem;
+    text-decoration: none;
+}
+  
+.social-media svg {
+  width: 1.5rem;
+    height: 1.5rem;
+}
+.section {
+    padding: 2rem 1rem;
+}
+  
+.section-title {
+    border-top: thin solid var(--first-color);
+    border-bottom: thin solid var(--first-color);
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    width: 250px;
+    text-align: center;
+    color: var(--title-color);
 }
 
 @media screen and (min-width: 1024px){
@@ -334,15 +477,19 @@ p{
         padding: 0.5rem;
         height: calc(var(--header-height) - 0.5rem);
     }
-}
-
-#prueba{
-    display: grid;
-    grid-template-columns: repeat(3, 30% );
-    justify-content: space-between;
-    align-content: center;
-}
-
-#resultado{
-    margin-top: 1rem;
+    .contact-cards {
+        grid-template-columns: repeat(4, 24%);
+      }
+    .contact-cards {
+        grid-template-columns: repeat(4, 24%);
+    }
+    .footer {
+        margin-bottom: 0;
+      }
+      #prueba{
+        display: grid;
+        grid-template-columns: repeat(3, 30% );
+        justify-content: space-between;
+        align-content: center;
+    }
 }
