@@ -38,11 +38,18 @@ function consultarJson(){
         .then(datos => mostrarCard(datos))
 }
 
-function mostrarCard(datos){
-    
-    datos.forEach((dato, r) =>{
-       
-        if (r < 3){
+function mostrarCard(datos){ 
+             
+    //Array de  mascotas  aleatorias
+    let randomItem1 = datos[Math.floor(Math.random() * datos.length)];
+    let randomItem2 = datos[Math.floor(Math.random() * datos.length)];
+    let randomItem3 = datos[Math.floor(Math.random() * datos.length)];
+
+    const arrayMascotas = [randomItem1, randomItem2, randomItem3]
+
+    //Renderiza las tarjetas de las mascotas 
+    arrayMascotas.forEach((dato) =>{
+        if(randomItem1 !== randomItem2 && randomItem3 !== randomItem1){
         $('#prueba').append(`
         
         <div id="prueba">
@@ -58,19 +65,13 @@ function mostrarCard(datos){
                     </div>
                     
                      `)}
-                     console.log(r)
-                      
-                    } 
-                    
 
-    )};
+    })
 
-
-
-
+ };
 /****Busqueda de coincidencias********* */
 const busqueda = document.querySelector('#btn_buscar');
-const divResultado = document.querySelector('#resultado');
+//const divResultado = document.querySelector('#resultado');
 const verFormulario = document.querySelector('#btn-enviar');
 const id = localStorage;
 
@@ -86,38 +87,7 @@ busqueda.addEventListener('click', (e) =>{
 });
 */
 
-
-/*function obtenerDatosApi(){
-    
-    fetch('../datos.json')
-        .then(respuesta => respuesta.json())
-        .then(adoptables => filtrarDatos(adoptables))
-}
-/*-----Mostrar Coincidencias--------
-function filtrarDatos(adoptables){
-    adoptables.forEach(adoptable =>{               
-               
-                
-        if (adoptable.tipoMascota === document.querySelector('#tipoMascota').value && 
-        adoptable.edadMascota === document.querySelector('#edad').value &&
-        adoptable.tamañoMascota === document.querySelector('#tipoTamanio').value){
-           
-         
-        $('#resultado').prepend(`
-            
-            <div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
-                <img src="${adoptable.foto}" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">${adoptable.nombre}</h5>
-                <p class="card-text">${adoptable.nombre} es un ${adoptable.tipoMascota} de tamaño ${adoptable.tamañoMascota} y ${adoptable.edadMascota}. Rescatado por ${adoptable.nombreRefugio}</p>
-                <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
-            </div>
-            </div>   `)} 
-})
-};
-
-/*------------------------------------*/
-
+//Trae las mascotas del JSON
 const cargarMascotas = () =>{
     fetch('../datos.json')
         .then((res) => res.json())
@@ -129,26 +99,16 @@ const cargarMascotas = () =>{
 }
 
 function renderCard(mascotas){
-  
-    /*let content = `
-    <div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
-                <img src="${mascotas.foto}" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">${mascotas.nombre}</h5>
-                <p class="card-text">${mascotas.nombre} es un ${mascotas.tipoMascota} de tamaño ${mascotas.tamañoMascota} y ${mascotas.edadMascota}. Rescatado por ${mascotas.nombreRefugio}</p>
-                <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
-            </div>
-            </div>    
     
-    `  */  
+    //Filtra las mascotas que coinciden con los parametros de busqueda
     let adoptables = 
     mascotas.filter(mascota =>
         mascota.tipoMascota === document.querySelector('#tipoMascota').value && 
         mascota.edadMascota === document.querySelector('#edad').value &&
         mascota.tamañoMascota === document.querySelector('#tipoTamanio').value)
 
-    console.log(adoptables);    
-
+     
+        //Muestra las mascotas que coinciden 
     adoptables.forEach(adoptable =>{
 
         $('#resultadoPositivo').prepend(`<div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
@@ -160,20 +120,15 @@ function renderCard(mascotas){
     </div>
     </div>`)
         
-    /*$('#resultado').prepend(`
-    <div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
-                <img src="${adoptable.foto}" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">${adoptable.nombre}</h5>
-                <p class="card-text">${adoptable.nombre} es un ${adoptable.tipoMascota} de tamaño ${adoptable.tamañoMascota} y ${adoptable.edadMascota}. Rescatado por ${adoptable.nombreRefugio}</p>
-                <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
-            </div>
-            </div>    
-    
-    `    )   */
-    }) 
+   
+    })     
+    //Alerta si no hay coincidencias 
+    if(adoptables.length === 0){
+        swal("No hay Coincidencias!", "...realiza una nueva busqueda!");
+    }
 
 
          
   
 };
+

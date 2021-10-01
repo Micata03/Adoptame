@@ -1,4 +1,4 @@
-
+//Muestra las mascotas en adopcion
 document.addEventListener('DOMContentLoaded', () => {
     cargarMascotas();
 })
