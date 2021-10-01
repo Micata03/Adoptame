@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     cargarMascotas();
 })
@@ -8,16 +9,13 @@ const cargarMascotas = () =>{
         .then(mascotas =>{
             mascotas.forEach(mascota =>{
                 renderCard(mascota);
+                
             })
         })
         .catch((err) => console.log(err))
 }
 
 
-const contenedorGatos = document.querySelector('#contenedorGatos');
-const contenedorPerros = document.querySelector ('#contenedorPerros');
-const gatos = document.querySelector('#btn-gatos');
-const perros = document.querySelector('#btn-perros');
 
 
 
@@ -42,9 +40,4 @@ function renderCard(mascota){
   
 };
 
-gatos.addEventListener('click', () =>{
-      if (mascota.tipoMascota === 'Gato'){
-     
-      $('.mascotas').hide()
-      $('#contenedorGatos').append(content)
-  }  })
+

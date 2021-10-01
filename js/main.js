@@ -121,45 +121,59 @@ function filtrarDatos(adoptables){
 const cargarMascotas = () =>{
     fetch('../datos.json')
         .then((res) => res.json())
-        .then(mascotas =>{
-            mascotas.forEach(mascota =>{
-                renderCard(mascota);
-            })
-        })
+        .then(mascotas =>renderCard(mascotas))
+                   
+            
+        
         .catch((err) => console.log(err))
 }
 
-function renderCard(mascota){
+function renderCard(mascotas){
   
-    let content = `
+    /*let content = `
     <div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
-                <img src="${mascota.foto}" class="card-img-top" alt="...">
+                <img src="${mascotas.foto}" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">${mascota.nombre}</h5>
-                <p class="card-text">${mascota.nombre} es un ${mascota.tipoMascota} de tamaño ${mascota.tamañoMascota} y ${mascota.edadMascota}. Rescatado por ${mascota.nombreRefugio}</p>
+                <h5 class="card-title">${mascotas.nombre}</h5>
+                <p class="card-text">${mascotas.nombre} es un ${mascotas.tipoMascota} de tamaño ${mascotas.tamañoMascota} y ${mascotas.edadMascota}. Rescatado por ${mascotas.nombreRefugio}</p>
                 <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
             </div>
-            </div> 
+            </div>    
     
-    
-    `
-       
-    
-
-    if (mascota.tipoMascota === document.querySelector('#tipoMascota').value && 
+    `  */  
+    let adoptables = 
+    mascotas.filter(mascota =>
+        mascota.tipoMascota === document.querySelector('#tipoMascota').value && 
         mascota.edadMascota === document.querySelector('#edad').value &&
-        mascota.tamañoMascota === document.querySelector('#tipoTamanio').value){
+        mascota.tamañoMascota === document.querySelector('#tipoTamanio').value)
 
-            $('#resultadoPositivo').prepend(content);
-            
-        }
+    console.log(adoptables);    
+
+    adoptables.forEach(adoptable =>{
+
+        $('#resultadoPositivo').prepend(`<div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
+        <img src="${adoptable.foto}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${adoptable.nombre}</h5>
+        <p class="card-text">${adoptable.nombre} es un ${adoptable.tipoMascota} de tamaño ${adoptable.tamañoMascota} y ${adoptable.edadMascota}. Rescatado por ${adoptable.nombreRefugio}</p>
+        <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
+    </div>
+    </div>`)
+        
+    /*$('#resultado').prepend(`
+    <div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
+                <img src="${adoptable.foto}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${adoptable.nombre}</h5>
+                <p class="card-text">${adoptable.nombre} es un ${adoptable.tipoMascota} de tamaño ${adoptable.tamañoMascota} y ${adoptable.edadMascota}. Rescatado por ${adoptable.nombreRefugio}</p>
+                <a href="formulario.html" class="btn btn-primary boton" >Adoptar!</a>
+            </div>
+            </div>    
     
+    `    )   */
+    }) 
 
-    
 
- 
-
- 
-    
+         
   
 };
