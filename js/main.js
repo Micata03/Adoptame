@@ -23,6 +23,9 @@
 })(document);
 
 
+
+
+
 /*-----Cards Mascotas, Muestra las mascotas al cargar la pagina, tomando los datos del Json -----*/
 
 
@@ -67,6 +70,7 @@ function mostrarCard(datos){
                      `)}
 
     })
+    
 
  };
 /****Busqueda de coincidencias********* */
