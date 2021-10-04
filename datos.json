@@ -109,6 +109,40 @@
     "foto": "images/gato (4).jpg"
 
 
+},
+{
+    "id": 11,
+    "nombre": "Popie",
+    "tipoMascota" :"Perro",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Mascotas en Adopcion",
+    "foto": "images/dog7.jpg"
+
+
+},
+{
+    "id": 12,
+    "nombre": "Wolfy",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Adulto",
+    "tamañoMascota" : "Mediano",
+    "nombreRefugio" : "Los Gaturros",
+    "foto": "images/gato (5).jpg"
+
+
+},
+{
+    "id": 13,
+    "nombre": "Picky",
+    "tipoMascota" :"Gato",
+    "edadMascota" : "Cachorro",
+    "tamañoMascota" : "Pequeño",
+    "nombreRefugio" : "Los Zaguates",
+    "foto": "images/gato (6).jpg"
+
+
 }
+
 
 ]

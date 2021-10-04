@@ -111,6 +111,15 @@ p{
     background-color: var(--opacity-color);
     
 }
+
+.hero-image-contact{
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
 .hero-image-title{
     
     font-size: 7.5vw;
@@ -180,11 +189,7 @@ p{
     height: 4rem;
     fill: var(--first-color);
   }
-  
-  .modal#gracias:target {
-    opacity: 1;
-    pointer-events: auto;
-  }
+
   
   @media screen and (min-width: 1024px) {
     .contact-form {

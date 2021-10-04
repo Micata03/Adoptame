@@ -32,6 +32,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     consultarJson();
+    
 })
 
 
@@ -75,9 +76,9 @@ function mostrarCard(datos){
  };
 /****Busqueda de coincidencias********* */
 const busqueda = document.querySelector('#btn_buscar');
-//const divResultado = document.querySelector('#resultado');
+const divResultado = document.querySelector('#resultadoPositivo');
 const verFormulario = document.querySelector('#btn-enviar');
-const id = localStorage;
+
 
 
 busqueda.addEventListener('click', (e) =>{
@@ -85,11 +86,7 @@ busqueda.addEventListener('click', (e) =>{
     cargarMascotas()
 });
 
-/*verFormulario.addEventListener('click', (e)=>{
-    e.preventDefault();
-    mostrarFormulario()
-});
-*/
+
 
 //Trae las mascotas del JSON
 const cargarMascotas = () =>{
@@ -103,6 +100,7 @@ const cargarMascotas = () =>{
 }
 
 function renderCard(mascotas){
+    limpiarHtml();
     
     //Filtra las mascotas que coinciden con los parametros de busqueda
     let adoptables = 
@@ -114,6 +112,7 @@ function renderCard(mascotas){
      
         //Muestra las mascotas que coinciden 
     adoptables.forEach(adoptable =>{
+
 
         $('#resultadoPositivo').prepend(`<div class="card text-center border-success mb-3 mt-3" style="width: 18rem;" id="tarjetas">
         <img src="${adoptable.foto}" class="card-img-top" alt="...">
@@ -135,4 +134,9 @@ function renderCard(mascotas){
          
   
 };
+
+function limpiarHtml(){
+    divResultado.innerHTML = "";
+
+}
 
